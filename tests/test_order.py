@@ -4,6 +4,7 @@ import pytest
 from page_objects.main_page import MainPage
 from page_objects.order_page import OrderPage
 from locators.main_page_locators import MainPageLocators
+from locators.order_page_locators import OrderLocators
 
 from data import OrderData
 
@@ -40,4 +41,4 @@ class TestMakeOrder:
                               order_info['Color'], 
                               order_info['Comment']
         )
-        assert 'Заказ оформлен' in order_page.get_order_number_window_text()
+        assert order_page.wait_for_element_visibility(OrderLocators.ORDER_COMPLETED)
