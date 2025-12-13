@@ -16,11 +16,11 @@ class MainPageLocators():
     # Локаторы вопросов и ответов
     @staticmethod
     def question_locator(index):
-        return (By.XPATH, f'(.//div[@class="accordion__button"])[{index}]')
+        return (By.ID, f'accordion__heading-{index-1}')
 
     @staticmethod
     def answer_locator(index):
-        return (By.XPATH, f'(.//div[@class="accordion__panel"])[{index}]')
+        return (By.ID, f'accordion__panel-{index-1}')
 
     # Локаторы подзаголовка главной страницы Самоката со словами "Самокат на пару дней"
     SCOOTER_SUBHEADER=(By.XPATH, './/div[contains(@class,"Home_Header")]')

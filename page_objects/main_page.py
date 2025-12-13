@@ -10,7 +10,7 @@ class MainPage(BasePage):
 
     @allure.step('Ожидание загрузки главной страницы')
     def wait_load_main_page(self):
-        self.wait_for_element_visibility(MainPageLocators.question_locator('last()'))
+        self.wait_for_element_visibility(MainPageLocators.question_locator(8))
 
     @allure.step('Нажатие на кнопку принятия куков')
     def click_accept_cookie_button(self):
