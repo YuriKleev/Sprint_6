@@ -78,7 +78,7 @@ class OrderPage(BasePage):
 
     @allure.step('Ожидание загрузки окна с информацией о заказе')
     def wait_load_order_number_window(self):
-        self.wait_for_element_visibility(OrderLocators.ORDER_COMPLETED)
+        return self.wait_for_element_visibility(OrderLocators.ORDER_COMPLETED)
 
     @allure.step('Полный позитивный сценарий заказа самоката')
     def make_order(self, name, lastname, address, metro, number, order_date, days, color, comment):
