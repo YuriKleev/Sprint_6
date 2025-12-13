@@ -80,10 +80,6 @@ class OrderPage(BasePage):
     def wait_load_order_number_window(self):
         self.wait_for_element_visibility(OrderLocators.ORDER_COMPLETED)
 
-    @allure.step('Получение заголовка окна с информацией о заказе')
-    def get_order_number_window_text(self):
-        return self.find_element(OrderLocators.ORDER_COMPLETED).text
-
     @allure.step('Полный позитивный сценарий заказа самоката')
     def make_order(self, name, lastname, address, metro, number, order_date, days, color, comment):
         self.wait_load_order_page()
@@ -101,5 +97,3 @@ class OrderPage(BasePage):
         self.click_order_button()
         self.wait_load_confirm_window()
         self.click_confirm_button()
-        self.wait_load_order_number_window()
-        self.get_order_number_window_text()

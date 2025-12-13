@@ -41,4 +41,4 @@ class TestMakeOrder:
                               order_info['Color'], 
                               order_info['Comment']
         )
-        assert order_page.wait_for_element_visibility(OrderLocators.ORDER_COMPLETED)
+        assert order_page.wait_load_order_number_window()
