@@ -20,7 +20,7 @@ class BasePage:
 
     @allure.step('Ожидание видимости элемента')
     def wait_for_element_visibility(self, locator):
-        WebDriverWait(self.driver, 7).until(EC.visibility_of_element_located(locator))
+        return WebDriverWait(self.driver, 7).until(EC.visibility_of_element_located(locator))
 
     @allure.step('Переключение на новое окно')
     def switch_to_new_window(self):

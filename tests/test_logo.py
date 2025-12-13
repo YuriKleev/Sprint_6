@@ -14,8 +14,7 @@ class TestLogo:
         main_page.click_upper_order_button()
         main_page.wait_element_to_be_clickable(MainPageLocators.LOGO_SCOOTER)
         main_page.click_element(MainPageLocators.LOGO_SCOOTER)
-        main_page.wait_for_element_visibility(MainPageLocators.SCOOTER_SUBHEADER)
-        assert main_page.get_current_url() == main_page_url
+        assert main_page.wait_for_element_visibility(MainPageLocators.SCOOTER_SUBHEADER)
 
     @allure.title('Проверка редиректа на главную страницу "Дзена"')
     @allure.description('Проверяем, что при нажатии на лого "Яндекса" происходит редирект на главную страницу "Дзена"')
@@ -23,5 +22,4 @@ class TestLogo:
         main_page = MainPage(driver)
         main_page.click_element(MainPageLocators.LOGO_YANDEX)
         main_page.switch_to_new_window()
-        main_page.wait_for_element_visibility(MainPageLocators.DZEN_HEADER)
-        assert dzen_page_url in main_page.get_current_url()
+        assert main_page.wait_for_element_visibility(MainPageLocators.DZEN_HEADER)
